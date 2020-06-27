@@ -36,12 +36,12 @@ class Telas_Monitoracao():
         login = self.driver.find_element_by_id("user_email")
         time.sleep(2)
         login.click()
-        self.wa.cleanContent()     
+        login.clear()   
         login.send_keys('')#Write your e-mail between ' ', like: 'example@example.com'
         password = self.driver.find_element_by_id("user_senha")
         time.sleep(2)
         password.click()
-        self.wa.cleanContent()        
+        password.clear()       
         password.send_keys('')#Write your password between ' ', like: 'PasswordExample123'
         time.sleep(2)
         submitButton = self.driver.find_element_by_xpath("//button[@type='submit']")
@@ -105,14 +105,14 @@ class Telas_Monitoracao():
         #Initial date
         initialDateField = self.driver.find_element_by_id('initial-date')
         initialDateField.click()
-        self.wa.cleanContent()
+        initialDateField.clear()
         time.sleep(1)
         initialDateField.send_keys(lastMonthDate.strftime("%d/%m/%Y")) #Add last month date
         pyautogui.press('enter')
         #Final date
         finalDateField = self.driver.find_element_by_id('final-date')
         finalDateField.click()
-        self.wa.cleanContent()
+        finalDateField.clear()
         time.sleep(1)
         finalDateField.send_keys(currentDate.strftime("%d/%m/%Y"))
         pyautogui.press('enter')
@@ -210,11 +210,6 @@ class WindowsAction ():
             pyautogui.moveTo(x=1985, y=15) #Set cursor first report tab
             pyautogui.dragTo(x=767, y=15, duration=0.75) #drag to center thrid window
             time.sleep(2)
-
-    def cleanContent (self):
-        pyautogui.hotkey('ctrl','a')
-        pyautogui.press('del') 
-        time.sleep(2) 
 
 tm = Telas_Monitoracao()
 wa = WindowsAction()
