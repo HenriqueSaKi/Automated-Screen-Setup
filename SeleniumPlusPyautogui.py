@@ -173,17 +173,13 @@ class Telas_Monitoracao():
         for i in range (4):
             pyautogui.hotkey('ctrl', tab[i])
             time.sleep(2)
-            element = WebDriverWait(self.driver, 50).until(EC.NoSuchWindowException((By.XPATH, "//embed[@type='application/pdf']"))).click()
-            pyautogui.hotkey('ctrl', 'f')
-            time.sleep(2)
-            pyautogui.write('Grafico', interval=0.1)
+            element = WebDriverWait(self.driver, 50).until(EC.NoSuchWindowException((By.XPATH, "//embed[@type='application/pdf']")))
+            element.click()
+            fullscreen = self.driver.find_element_by_xpath("//paper-ripple[@class='circle']")
+            fullscreen.click()
+            pyautogui.press('pagedown')
             time.sleep(1)
-            pyautogui.press('enter')
-            time.sleep(1)
-            pyautogui.press('esc')
-            time.sleep(1)
-            pyautogui.press('down', presses=9)
-            time.sleep(2)
+
 
 class WindowsAction ():
     def __init__(self):
