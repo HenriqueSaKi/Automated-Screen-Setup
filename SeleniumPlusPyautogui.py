@@ -13,10 +13,10 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchWindowException
 import pyautogui
-import time 
+import time
 import datetime
+import os
 from datetime import timedelta
 
 class Telas_Monitoracao():
@@ -29,7 +29,7 @@ class Telas_Monitoracao():
         self.datas = [{"instituicao":"Hospital São Luiz São Caetano do Sul", "modelo":"EN - Consumo Energia Elétrica EE CAG"}, {"instituicao":"Hospital São Luiz Itaim", "modelo":"EN - Efiiciencia Energética - Medidor CAG"}, {"instituicao":"Hospital Unimed", "modelo":"EN - Consumo Energético - CAG"},{"instituicao":"Honda", "modelo":"EN - Eficiencia Energética CAG"}]
 
     #Set contratoManutencao window
-    def contratoManutencao (self):
+    def contratoManutencao_Tela1 (self):
         action = ActionChains(self.driver)
         self.driver.get('https://g5.oxyn.com.br/')
         time.sleep(2)
@@ -119,6 +119,7 @@ class Telas_Monitoracao():
         time.sleep(2)
 
     def openReport (self):
+        self.callTab(3)
         for i in range (4):
             fields = self.datas[i]
             select = self.driver.find_element_by_xpath("//span[@id='select2-sites-container']")
@@ -126,6 +127,7 @@ class Telas_Monitoracao():
             time.sleep(2)
             insertName = self.driver.find_element_by_xpath("//input[@class='select2-search__field']")
             insertName.send_keys(fields["instituicao"])
+            time.sleep(1)
             pyautogui.press('enter')
             time.sleep(5)
             report = self.driver.find_element_by_class_name('report')
@@ -170,16 +172,29 @@ class Telas_Monitoracao():
 
     def reportPosition (self):
         tab = ['7', '6', '5', '4']
+        clear = lambda: os.system("cls")
+        wait = 0
+        clear()
+        while wait < 60:
+            time.sleep(1)
+            wait = wait + 1
+            if wait%2 != 0: 
+                print ("Waiting...  |  {}".format(wait))
+            else:
+                print ("Waiting...  -  {}".format(wait))
+            clear()
+
         for i in range (4):
             pyautogui.hotkey('ctrl', tab[i])
             time.sleep(2)
-            element = WebDriverWait(self.driver, 50).until(EC.NoSuchWindowException((By.XPATH, "//embed[@type='application/pdf']")))
-            element.click()
+            pyautogui.hotkey('ctrl', 'f')
+            pyautogui.write('Grafico')
+            pyautogui.press('enter')
+            time.sleep(1)
+            pyautogui.press('esc')
             fullscreen = self.driver.find_element_by_xpath("//paper-ripple[@class='circle']")
             fullscreen.click()
-            pyautogui.press('pagedown')
             time.sleep(1)
-
 
 class WindowsAction ():
     def __init__(self):
@@ -210,9 +225,8 @@ class WindowsAction ():
 tm = Telas_Monitoracao()
 wa = WindowsAction()
 tm.centerPositionScreen()
-tm.contratoManutencao()
+tm.contratoManutencao_Tela1()
 tm.contratoManutencao_Tela2()
-tm.callTab(3)
 tm.openReport()
 tm.reportPosition()
 #wa.sendToFirstScreen()
