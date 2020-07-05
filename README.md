@@ -41,3 +41,6 @@
 
 ## Links :link:
 ## Run Application :arrow_forward: 
+<div align="center">
+    <img src="setup.gif" width="480" height="270">
+</div>

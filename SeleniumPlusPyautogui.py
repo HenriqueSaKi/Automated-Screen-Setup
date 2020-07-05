@@ -176,10 +176,7 @@ class Telas_Monitoracao():
         wait = 0
         clear()
         while wait < 60:
-<<<<<<< HEAD
             print("Aguarde 1 minuto.")
-=======
->>>>>>> 324cbb988256d0b8b89db2a34fe3ed1e2b69cd86
             time.sleep(1)
             wait = wait + 1
             if wait%2 != 0: 
