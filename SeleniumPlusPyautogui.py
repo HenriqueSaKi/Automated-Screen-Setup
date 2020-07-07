@@ -49,8 +49,6 @@ class Telas_Monitoracao():
         time.sleep(7)
         pyautogui.press('esc')
         time.sleep(2)
-        #resumo = self.driver.find_element_by_xpath("//div[@id='nav']//li[2]")
-        #resumo.click()
         resumo = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[@id='nav']//li[2]")))
         resumo.click()
         time.sleep(3)
@@ -136,8 +134,8 @@ class Telas_Monitoracao():
             reportModel = self.driver.find_element_by_id('select2-report-model-select2-container')
             reportModel.click()
             findModel = WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, 'select2-search__field')))
-            findModel.send_keys(fields["modelo"])
             time.sleep(5)
+            findModel.send_keys(fields["modelo"])
             pyautogui.press('enter')
             time.sleep(1)
             self.dateCalculator()
@@ -193,7 +191,7 @@ class Telas_Monitoracao():
             pyautogui.press('enter')
             time.sleep(1)
             pyautogui.press('esc')
-            fullscreen = self.driver.find_element_by_xpath("//paper-ripple[@class='circle']")
+            fullscreen = self.driver.find_element_by_xpath("//paper-ripple[@class='circle']") #Maybe it won't work, please check
             fullscreen.click()
             time.sleep(1)
 
