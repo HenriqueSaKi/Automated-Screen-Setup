@@ -187,11 +187,11 @@ class Telas_Monitoracao():
             pyautogui.hotkey('ctrl', tab[i])
             time.sleep(2)
             pyautogui.hotkey('ctrl', 'f')
-            pyautogui.write('Grafico')
+            pyautogui.write('Grafico', interval='0.5')
             pyautogui.press('enter')
             time.sleep(1)
             pyautogui.press('esc')
-            fullscreen = self.driver.find_element_by_xpath("//paper-ripple[@class='circle']") #Maybe it won't work, please check
+            fullscreen = self.driver.find_element_by_xpath("//div[@id='zoom-buttons']") #Maybe it won't work, please check
             fullscreen.click()
             time.sleep(1)
 
