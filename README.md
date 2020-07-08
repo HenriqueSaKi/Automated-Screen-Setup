@@ -44,3 +44,5 @@
 <div align="center">
     <img src="setup.gif" width="480" height="270">
 </div>
+
+Documento desenvolvido em HTML5 e Markdown por Henrique S. Kisaki
