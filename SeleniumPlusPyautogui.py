@@ -49,6 +49,7 @@ class Telas_Monitoracao():
         time.sleep(7)
         pyautogui.press('esc')
         time.sleep(2)
+        #Wait until detect element
         resumo = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[@id='nav']//li[2]")))
         resumo.click()
         time.sleep(3)
@@ -130,11 +131,10 @@ class Telas_Monitoracao():
             time.sleep(5)
             report = self.driver.find_element_by_class_name('report')
             report.click()
-            time.sleep(1)
+            time.sleep(5)
             reportModel = self.driver.find_element_by_id('select2-report-model-select2-container')
             reportModel.click()
             findModel = WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, 'select2-search__field')))
-            time.sleep(5)
             findModel.send_keys(fields["modelo"])
             pyautogui.press('enter')
             time.sleep(1)
@@ -162,10 +162,10 @@ class Telas_Monitoracao():
         self.driver.maximize_window()
         time.sleep(2)
         pyautogui.moveTo(x=-960, y=15) #Set cursor in first screen
-        pyautogui.dragTo(x=960, y=15, duration=0.75) #Drag window to second
+        pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
         time.sleep(2)
         pyautogui.moveTo(x=2880, y=15) #Set cursor in third screen
-        pyautogui.dragTo(x=960, y=15, duration=0.75) #Drag window to second
+        pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
         time.sleep(2)
 
     def reportPosition (self):
@@ -174,6 +174,7 @@ class Telas_Monitoracao():
         wait = 0
         clear()
         while wait < 60:
+            clear()
             print("Aguarde 1 minuto.")
             time.sleep(1)
             wait = wait + 1
@@ -181,19 +182,18 @@ class Telas_Monitoracao():
                 print ("Waiting...  |  {}".format(wait))
             else:
                 print ("Waiting...  -  {}".format(wait))
-            clear()
 
         for i in range (4):
             pyautogui.hotkey('ctrl', tab[i])
             time.sleep(2)
             pyautogui.hotkey('ctrl', 'f')
-            pyautogui.write('Grafico', interval='0.5')
+            time.sleep(1)
+            pyautogui.write('Grafico', interval='0.1')
             pyautogui.press('enter')
             time.sleep(1)
             pyautogui.press('esc')
-            fullscreen = self.driver.find_element_by_xpath("//div[@id='zoom-buttons']") #Maybe it won't work, please check
-            fullscreen.click()
             time.sleep(1)
+            #Try to find a solution, manipulating Chrome DevTools
 
 class WindowsAction ():
     def __init__(self):
