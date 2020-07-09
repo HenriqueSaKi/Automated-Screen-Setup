@@ -191,8 +191,8 @@ class WindowsAction ():
    
     def secondScreen(self):
         for i in range (2):
-            pyautogui.moveTo(x=1985, y=15) #Set cursor first report tab
-            pyautogui.dragTo(x=767, y=15, duration=0.75) #drag to center thrid window
+            pyautogui.moveTo(x=1985, y=15) #Set cursor first report tab on thrid window
+            pyautogui.dragTo(x=767, y=15, duration=0.75) #drag to center of second window
             time.sleep(2)
 
     def maximizePDF (self):
@@ -207,10 +207,10 @@ class WindowsAction ():
         clear()
         while wait < 60:
             clear()
-            print("Aguarde 1 minuto.")
+            print("Wait 1 minute")
             wait = wait + 1
             time.sleep(0.8)
-        print("Pronto...")
+        print("Ready...")
 
         for i in range (4):
             pyautogui.moveTo(x=960, y=540) #center of a 1920x1080 screen
@@ -233,6 +233,6 @@ tm.contratoManutencao_Tela1()
 tm.contratoManutencao_Tela2()
 tm.openReport()
 wa.reportPosition()
-#wa.sendToFirstScreen()
-#wa.sendAllToThird()
-#wa.secondScreen()
+wa.sendToFirstScreen()
+wa.sendAllToThird()
+wa.secondScreen()
