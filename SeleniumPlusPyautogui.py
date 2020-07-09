@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import pyautogui
 import time
 import datetime
@@ -168,33 +169,6 @@ class Telas_Monitoracao():
         pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
         time.sleep(2)
 
-    def reportPosition (self):
-        tab = ['7', '6', '5', '4']
-        clear = lambda: os.system("cls")
-        wait = 0
-        clear()
-        while wait < 60:
-            clear()
-            print("Aguarde 1 minuto.")
-            time.sleep(1)
-            wait = wait + 1
-            if wait%2 != 0: 
-                print ("Waiting...  |  {}".format(wait))
-            else:
-                print ("Waiting...  -  {}".format(wait))
-
-        for i in range (4):
-            pyautogui.hotkey('ctrl', tab[i])
-            time.sleep(2)
-            pyautogui.hotkey('ctrl', 'f')
-            time.sleep(1)
-            pyautogui.write('Grafico', interval='0.1')
-            pyautogui.press('enter')
-            time.sleep(1)
-            pyautogui.press('esc')
-            time.sleep(1)
-            #Try to find a solution, manipulating Chrome DevTools
-
 class WindowsAction ():
     def __init__(self):
         pass
@@ -221,13 +195,44 @@ class WindowsAction ():
             pyautogui.dragTo(x=767, y=15, duration=0.75) #drag to center thrid window
             time.sleep(2)
 
+    def maximizePDF (self):
+        pyautogui.moveTo(x=1852, y=869, duration=2.0)
+        pyautogui.click()
+        time.sleep(1.5)
+
+    def reportPosition (self):
+        tab = ['7', '6', '5', '4']
+        clear = lambda: os.system("cls")
+        wait = 0
+        clear()
+        while wait < 60:
+            clear()
+            print("Aguarde 1 minuto.")
+            wait = wait + 1
+            time.sleep(0.8)
+        print("Pronto...")
+
+        for i in range (4):
+            pyautogui.moveTo(x=960, y=540) #center of a 1920x1080 screen
+            pyautogui.hotkey('ctrl', tab[i])
+            time.sleep(2)
+            pyautogui.hotkey('ctrl', 'f')
+            time.sleep(1)
+            pyautogui.write('Grafico', interval='0.1')
+            pyautogui.press('enter')
+            time.sleep(1)
+            pyautogui.press('esc')
+            time.sleep(1)
+            self.maximizePDF()
+            time.sleep(1)
+
 tm = Telas_Monitoracao()
 wa = WindowsAction()
 tm.centerPositionScreen()
 tm.contratoManutencao_Tela1()
 tm.contratoManutencao_Tela2()
 tm.openReport()
-tm.reportPosition()
+wa.reportPosition()
 #wa.sendToFirstScreen()
 #wa.sendAllToThird()
 #wa.secondScreen()
