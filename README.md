@@ -53,13 +53,13 @@
     - Pyautogui:</br>
     
     ```
-    python -m pip install datetime
+    python -m pip install pyautogui
     ```
     
     - Selenium:</br>
     
     ```
-    python -m pip install datetime
+    python -m pip install selenium
     ```
     
 ## Links :link:
