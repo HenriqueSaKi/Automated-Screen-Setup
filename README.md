@@ -45,8 +45,23 @@
 
 - Frameworks:
     - Datetime:</br>
+    
+    ´´´
+    python -m pip install datetime
+    ´´´
+    
     - Pyautogui:</br>
+    
+    ´´´
+    python -m pip install datetime
+    ´´´
+    
     - Selenium:</br>
+    
+    ´´´
+    python -m pip install datetime
+    ´´´
+    
 ## Links :link:
 ## Run Application :arrow_forward: 
 <div align="center">
