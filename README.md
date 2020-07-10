@@ -31,11 +31,12 @@
 ## Requiriments :memo:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run the program is important to have these programs and frameworks installed in your machine.
 #### Program
-- [Python 3.8.3](https://www.python.org/downloads/)
+- [Python 3.8.3](https://www.python.org/)
+- [Visual Studio Code 1.47](https://code.visualstudio.com/)
 #### Framework
 - [Datetime](https://docs.python.org/3/library/datetime.html#)
-- [Pyautogui](https://pyautogui.readthedocs.io/en/latest/install.html)
-- [Selenium](https://selenium-python.readthedocs.io/installation.html)
+- [Pyautogui](https://pyautogui.readthedocs.io/en/latest/)
+- [Selenium](https://selenium-python.readthedocs.io/)
 
 ## Instalation Guide :book:
 
@@ -44,5 +45,5 @@
 <div align="center">
     <img src="setup.gif" width="480" height="270">
 </div>
-
+</br>
 Documento desenvolvido em HTML5 e Markdown por Henrique S. Kisaki
