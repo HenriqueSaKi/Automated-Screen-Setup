@@ -38,8 +38,9 @@
 - [Pyautogui](https://pyautogui.readthedocs.io/en/latest/)
 - [Selenium](https://selenium-python.readthedocs.io/)
 
-## Instalation Guide :book:
-
+## Installation Guide :book:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it from you OS prompt? [Click here]() and follow the steps
 ## Links :link:
 ## Run Application :arrow_forward: 
 <div align="center">
