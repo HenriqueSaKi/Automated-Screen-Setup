@@ -39,8 +39,14 @@
 - [Selenium](https://selenium-python.readthedocs.io/)
 
 ## Installation Guide :book:
+- Programs:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it from you OS prompt? [Click here](./InstallationGuide.md) and follow the steps
+
+- Frameworks:
+    - Datetime:
+    - Pyautogui:
+    - Selenium:
 ## Links :link:
 ## Run Application :arrow_forward: 
 <div align="center">
