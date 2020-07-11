@@ -47,13 +47,13 @@
 - Frameworks:</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following topics will present the basic form about how to install some libraries that are included in it's program in your Windows OS.</br>
 
-    -- Datetime:</br>
+    - Datetime:</br>
 
     ```
     python -m pip install datetime
     ```
     
-    -- Pyautogui:</br>
+    - Pyautogui:</br>
     
     ##### Windows
     
@@ -79,7 +79,7 @@
     sudo apt-get intall python3-dev
     ```
     
-    -- Selenium:</br>
+    - Selenium:</br>
     
     ##### Command for Windows users:
     
