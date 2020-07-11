@@ -43,7 +43,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it in another OS? Click [here](https://code.visualstudio.com/docs/setup/setup-overview) for install Visual Studio Code and [here](https://www.python.org/downloads/) for Python.
 </br>
-- Frameworks:
+- Frameworks:</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following topics will present the basic form about how to install some libraries that are included in it's program in your Windows OS.</br>
     - Datetime:</br>
 
