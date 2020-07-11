@@ -43,26 +43,34 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it in another OS? Click [here](https://code.visualstudio.com/docs/setup/setup-overview) for install Visual Studio Code and [here](https://www.python.org/downloads/) for Python.
 </br>
+
 - Frameworks:</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following topics will present the basic form about how to install some libraries that are included in it's program in your Windows OS.</br>
-    - Datetime:</br>
+
+    -- Datetime:</br>
 
     ```
     python -m pip install datetime
     ```
     
-    - Pyautogui:</br>
+    -- Pyautogui:</br>
+    
     ##### Windows
+    
     ```
     python -m pip install pyautogui
     ```
+    
     On macOS and Linux, you need to run ```python3```:
     ##### macOS and Linux
+    
     ```
     python3 -m pip install pyautogui
     ```
+    
     On Linux, additionally you need to install the ```scrot``` application, as well as Tkinter:
     ##### Linux
+    
     ```
     sudo apt-get install scrot
 
@@ -70,7 +78,9 @@
 
     sudo apt-get intall python3-dev
     ```
-    - Selenium:</br>
+    
+    -- Selenium:</br>
+    
     ##### Command for Windows users:
     
     ```
