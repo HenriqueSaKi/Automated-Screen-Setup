@@ -101,11 +101,11 @@
     <img src="setup.gif" width="480" height="270">
 </div>
 </br>
-&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;After followed the steps until here, you can easily run the application, just clicking on it and executing with "python", like the example below:</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After followed the steps until here, you can easily run the application, just clicking on it and executing with "python", like the example below:</br>
 
 <div align="center">
     <img src="selecting-python.png" width="520.5" height="219.5">
 </div></br>
-&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;Now, you just have to wait the program execute its function.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now, you just have to wait the program execute its function.
 </br></br>
 Documento desenvolvido em HTML5 e Markdown por Henrique S. Kisaki
