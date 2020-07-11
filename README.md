@@ -104,7 +104,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First of all, the program must to have a login account configured. So, you'll need to modify the code. Like represented below in the rows highlighted with the <u>breakpoint</u>:
 </br>
 <div align="center">
-    <img src="login.png" width="526.5" height="188">
+    <img src="login.PNG" width="526.5" height="188">
 </div></br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After followed the steps until here, you can easily run the application, just clicking on it and executing with "python", like the example below:</br>
