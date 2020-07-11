@@ -1,4 +1,4 @@
-<h1><div align='center'>Automating Work Process</div></h1>
+  <h1><div align='center'>Automating Work Process</div></h1>
 <div align='center'>
     <img src="http://img.shields.io/static/v1?label=python%20&message=3.8.3&color=blue&logo=python"/>
     <img src="http://img.shields.io/static/v1?label=status%20&message=in progress&color=yellow"/>
@@ -31,38 +31,61 @@
 ## Requiriments :memo:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run the program is important to have these programs and frameworks installed in your machine.
 #### Program
-- [Python 3.8.3](https://www.python.org/)
-- [Visual Studio Code 1.47](https://code.visualstudio.com/)
-#### Framework
-- [Datetime](https://docs.python.org/3/library/datetime.html#)
-- [Pyautogui](https://pyautogui.readthedocs.io/en/latest/)
-- [Selenium](https://selenium-python.readthedocs.io/)
+- Python 3.8.3
+- Visual Studio Code 1.47
+#### Libraries
+- Datetime
+- Pyautogui
+- Selenium
 
 ## Installation Guide :book:
 - Programs:</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it from you OS prompt? [Click here](./InstallationGuide.md) and follow the steps
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessing Python or Visual Studio Code website, you can easily download it's executable file and install.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Would you like to install it in another OS? Click [here](https://code.visualstudio.com/docs/setup/setup-overview) for install Visual Studio Code and [here](https://www.python.org/downloads/) for Python.
+</br>
 - Frameworks:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following topics will present the basic form about how to install some libraries that are included in it's program in your Windows OS.</br>
     - Datetime:</br>
-    
+
     ```
     python -m pip install datetime
     ```
     
     - Pyautogui:</br>
-    
+    ##### Windows
     ```
     python -m pip install pyautogui
     ```
-    
+    On macOS and Linux, you need to run ```python3```:
+    ##### macOS and Linux
+    ```
+    python3 -m pip install pyautogui
+    ```
+    On Linux, additionally you need to install the ```scrot``` application, as well as Tkinter:
+    ##### Linux
+    ```
+    sudo apt-get install scrot
+
+    sudo apt-get install python3-tk
+
+    sudo apt-get intall python3-dev
+    ```
     - Selenium:</br>
+    ##### Command for Windows users:
     
     ```
     python -m pip install selenium
     ```
-    
+
 ## Links :link:
+#### Program
+- [Python 3.8.3](https://www.python.org/)
+- [Visual Studio Code 1.47](https://code.visualstudio.com/)
+#### Libraries
+- [Datetime](https://docs.python.org/3/library/datetime.html#)
+- [Pyautogui](https://pyautogui.readthedocs.io/en/latest/)
+- [Selenium](https://selenium-python.readthedocs.io/)
+
 ## Run Application :arrow_forward: 
 <div align="center">
     <img src="setup.gif" width="480" height="270">
