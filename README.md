@@ -108,4 +108,4 @@
 </div></br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now, you just have to wait the program execute its function.
 </br></br>
-Documento desenvolvido em HTML5 e Markdown por Henrique S. Kisaki
+Document developed in HTML5 and Markdown by Henrique S. Kisaki
