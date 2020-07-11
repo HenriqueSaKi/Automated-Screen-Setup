@@ -101,7 +101,7 @@
     <img src="setup.gif" width="480" height="270">
 </div>
 </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First of all, the program must to have a login account configured. So, you'll need to modify the code. Like represented below in the rows highlighted with the <u>breakpoint</u>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First of all, the program must to have a login account configured. So, you'll need to modify the code. Like represented below in the rows highlighted with the <u>breakpoint</u>:
 </br>
 <div align="center">
     <img src="login.png" width="526.5" height="188">
