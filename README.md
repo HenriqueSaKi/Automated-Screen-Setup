@@ -26,7 +26,7 @@
 - Time
 - OS
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Observation: Don't worry about instalation, because it's going to be presented in the following topics.
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Observation: Don't worry about installation, because it's going to be presented in the following topics.
 
 ## Requiriments :memo:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run the program is important to have these programs and frameworks installed in your machine.
