@@ -1,6 +1,6 @@
 <h1><div align='center'>Automating Work Process</div></h1>
 <div align='center'>
-    <img src="http://img.shields.io/static/v1?label=python%20&message=3.8.3&color=yellow&logo=python"/>
+    <img src="http://img.shields.io/static/v1?label=python%20&message=3.8.3&color=blue&logo=python"/>
     <img src="http://img.shields.io/static/v1?label=status%20&message=concluded&color=-green"/>
     <img src="http://img.shields.io/static/v1?label=VS Code%20&message=1.47&color=blue&logo=visual-studio-code"/>
 </div>
