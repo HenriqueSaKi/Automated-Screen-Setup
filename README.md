@@ -1,8 +1,9 @@
 <h1><div align='center'>Automating Work Process</div></h1>
 <div align='center'>
     <img src="http://img.shields.io/static/v1?label=python%20&message=3.8.3&color=blue&logo=python"/>
-    <img src="http://img.shields.io/static/v1?label=status%20&message=concluded&color=-green"/>
     <img src="http://img.shields.io/static/v1?label=VS Code%20&message=1.47&color=blue&logo=visual-studio-code"/>
+    <img src="http://img.shields.io/static/v1?label=status%20&message=concluded&color=-green"/>
+    
 </div>
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Python, I created this program capable of setup some webpages by itself. It helps me saving 15 minutes of my daily routine at work.
