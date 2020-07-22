@@ -136,6 +136,7 @@ class Telas_Monitoracao():
             reportModel = self.driver.find_element_by_id('select2-report-model-select2-container')
             reportModel.click()
             findModel = WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, 'select2-search__field')))
+            time.sleep(5)
             findModel.send_keys(fields["modelo"])
             pyautogui.press('enter')
             time.sleep(1)
@@ -167,6 +168,7 @@ class Telas_Monitoracao():
         time.sleep(2)
         pyautogui.moveTo(x=2880, y=15) #Set cursor in third screen
         pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
+        pyautogui.click(x=960, y=10)
         time.sleep(2)
 
 class WindowsAction ():
@@ -180,7 +182,7 @@ class WindowsAction ():
         time.sleep(2)
 
     def sendAllToThird (self):
-        pyautogui.click(x=1677, y=15) #Set cursor first report tab
+        pyautogui.click(x=1712, y=15) #Set cursor first report tab
         pyautogui.keyDown('win')
         for i in range (4):
             pyautogui.press('right')
@@ -196,7 +198,7 @@ class WindowsAction ():
             time.sleep(2)
 
     def maximizePDF (self):
-        pyautogui.moveTo(x=1852, y=869, duration=2.0)
+        pyautogui.moveTo(x=1838, y=820, duration=2.0)
         pyautogui.click()
         time.sleep(1.5)
 
@@ -205,9 +207,9 @@ class WindowsAction ():
         clear = lambda: os.system("cls")
         wait = 0
         clear()
-        while wait < 60:
+        while wait < 30:
             clear()
-            print("Wait 1 minute")
+            print("Wait 30 seconds")
             wait = wait + 1
             time.sleep(0.8)
         print("Ready...")
