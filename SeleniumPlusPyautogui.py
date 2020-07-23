@@ -32,6 +32,8 @@ class Telas_Monitoracao():
     #Set contratoManutencao window
     def contratoManutencao_Tela1 (self):
         action = ActionChains(self.driver)
+        self.InstallRevolverTabExtension()
+        time.sleep(2)
         self.driver.get('https://g5.oxyn.com.br/')
         time.sleep(2)
         login = self.driver.find_element_by_id("user_email")
@@ -171,6 +173,20 @@ class Telas_Monitoracao():
         pyautogui.click(x=960, y=10)
         time.sleep(2)
 
+    def GoogleAccess (self):
+        self.driver.get('https://chrome.google.com/webstore/detail/revolver-tabs/dlknooajieciikpedpldejhhijacnbda?hl=pt-BR')
+    
+    def AddExtension (self):
+        addButton = self.driver.find_element_by_xpath("//div[@class='g-c-x']//div[contains(text(),'Usar no Chrome')]")
+        addButton.click()
+    
+    def InstallRevolverTabExtension (self):
+        self.GoogleAccess()
+        time.sleep(3)
+        self.AddExtension()
+        time.sleep(3)
+        pyautogui.press('esc')
+
 class WindowsAction ():
     def __init__(self):
         pass
@@ -227,6 +243,7 @@ class WindowsAction ():
             time.sleep(1)
             self.maximizePDF()
             time.sleep(1)
+
 
 tm = Telas_Monitoracao()
 wa = WindowsAction()
