@@ -177,15 +177,18 @@ class Telas_Monitoracao():
         self.driver.get('https://chrome.google.com/webstore/detail/revolver-tabs/dlknooajieciikpedpldejhhijacnbda?hl=pt-BR')
     
     def AddExtension (self):
-        addButton = self.driver.find_element_by_xpath("//div[@class='g-c-x']//div[contains(text(),'Usar no Chrome')]")
+        #resumo = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[@id='nav']//li[2]")))
+        addButton = WebDriverWait(self.driver,20).until(EC.presence_of_element_located((By.XPATH,"//div[@class='g-c-x']//div[contains(text(),'Usar no Chrome')]")))
         addButton.click()
     
     def InstallRevolverTabExtension (self):
         self.GoogleAccess()
         time.sleep(3)
         self.AddExtension()
-        time.sleep(3)
-        pyautogui.press('esc')
+        time.sleep(5)
+        pyautogui.press('left')
+        pyautogui.press('enter')
+        time.sleep(5)
 
 class WindowsAction ():
     def __init__(self):
@@ -255,3 +258,5 @@ wa.reportPosition()
 wa.sendToFirstScreen()
 wa.sendAllToThird()
 wa.secondScreen()
+pyautogui.click(x=1799, y=64)
+pyautogui.click(x=3719, y=60)
