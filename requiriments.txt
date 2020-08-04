@@ -1,0 +1,6 @@
+Chromedriver (De acordo com a versão do seu Google Chrome)
+Pyautogui
+Python 3.8.3 
+Selenium Webdriver
+Visual Studio Code 1.47.3
+Windows 10 Home Single Language
