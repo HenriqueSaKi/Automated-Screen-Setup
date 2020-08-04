@@ -100,19 +100,19 @@
 
 ## Run Application :arrow_forward: 
 <div align="center">
-    <img src="setup.gif" width="480" height="270">
+    <img src="/Readme-Images/setup.gif" width="480" height="270">
 </div>
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First of all, the program must to have a login account configured. So, you'll need to modify the code. Like represented below in the rows highlighted with the <u>breakpoint</u>:
 </br>
 <div align="center">
-    <img src="login.PNG" width="526.5" height="188">
+    <img src="/Readme-Images/login.PNG" width="526.5" height="188">
 </div></br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After followed the steps until here, you can easily run the application, just clicking on it and executing with "python", like the example below:</br>
 
 <div align="center">
-    <img src="selecting-python.png" width="520.5" height="219.5">
+    <img src="/Readme-Images/selecting-python.png" width="520.5" height="219.5">
 </div></br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now, you just have to wait the program execute its function.
 </br></br>
