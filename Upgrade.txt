@@ -3,3 +3,4 @@
 - Add comments
 - More Selenium than Pyautogui
 - Upgrade Screen Setup Functions
+- Left it standalone
