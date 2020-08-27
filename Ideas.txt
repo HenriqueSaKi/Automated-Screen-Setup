@@ -1,0 +1,2 @@
+- Study if exists (from webdriver.chrome.driver import ChormeDriverLocation)
+- Try to access devtools using pychrome
