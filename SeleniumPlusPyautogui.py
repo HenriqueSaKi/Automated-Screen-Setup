@@ -29,7 +29,7 @@ class Telas_Monitoracao():
     #Initialize class
     def __init__ (self):
         self.wa = WindowsAction()
-        self.datas = [{"instituicao":"Hospital São Luiz São Caetano do Sul", "modelo":"EN - Consumo Energia Elétrica EE CAG"}, {"instituicao":"Hospital São Luiz Itaim", "modelo":"EN - Efiiciencia Energética - Medidor CAG"}, {"instituicao":"Hospital Unimed", "modelo":"EN - Consumo Energético - CAG"},{"instituicao":"Honda", "modelo":"EN - Eficiencia Energética CAG"}, {"instituicao":"Hospital São Luiz Morumbi", "modelo":"EIXAD5 - Relatório EE - CAG"}]
+        self.datas = [{"instituicao":"Hospital São Luiz São Caetano do Sul", "modelo":"EN - Consumo Energia Elétrica EE CAG"}, {"instituicao":"Hospital São Luiz Itaim", "modelo":"EN - Eficiencia Energética - Medidor CAG"}, {"instituicao":"Hospital Unimed", "modelo":"EN - Consumo Energético - CAG"},{"instituicao":"Honda", "modelo":"EN - Eficiencia Energética CAG"}, {"instituicao":"Hospital São Luiz Morumbi", "modelo":"EIXAD5 - Relatório EE - CAG"}]
         
 
     #Set contratoManutencao window
