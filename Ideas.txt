@@ -2,4 +2,4 @@
 - Try to access devtools using pychrome
 - Solve dev tools problem
 - Verify why conection with google was refused
-- Add login at server "https://192.168.1.5:4100/logon.shtml?redirect=http://192.168.0.113"
+- Add server login "https://192.168.1.5:4100/logon.shtml?redirect=http://192.168.0.113"
