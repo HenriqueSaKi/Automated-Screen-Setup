@@ -1,2 +1,4 @@
-- Study if exists (from webdriver.chrome.driver import ChormeDriverLocation)
+- Study if exists (from webdriver.chrome.driver import ChormeDriverLocation) - Devtools Problem
 - Try to access devtools using pychrome
+- Solve dev tools problem
+- Verify why conection with google was refused
