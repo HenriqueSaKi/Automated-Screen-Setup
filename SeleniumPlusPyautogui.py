@@ -1,19 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun 22 22:00:41 2020
-@author: Henrique S. Kisaki
-"""
-
-"""
-Automating a daily process using Pyautogui and Selenium libraries.
-"""
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import pyautogui
 import time
@@ -21,44 +11,46 @@ import datetime
 import os
 from datetime import timedelta
 
-class Telas_Monitoracao():
-    #Initialize class
-    def __init__ (self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('lang=pt-br')
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        self.wa = WindowsAction()
-        self.datas = [{"instituicao":"Hospital São Luiz São Caetano do Sul", "modelo":"EN - Consumo Energia Elétrica EE CAG"}, {"instituicao":"Hospital São Luiz Itaim", "modelo":"EN - Eficiencia Energética - Medidor CAG"}, {"instituicao":"Hospital Unimed", "modelo":"EN - Consumo Energético - CAG"},{"instituicao":"Honda", "modelo":"EN - Eficiencia Energética CAG"}, {"instituicao":"Hospital São Luiz Morumbi", "modelo":"EIXAD5 - Relatório EE - CAG"}]
 
-    #Set contratoManutencao window
-    def contratoManutencao_Tela1 (self):
+class Telas_Monitoracao():
+    # Initialize class
+    def __init__(self):
+        options = Options()
+        options.add_extension('extension_0_71_0_0.crx')
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        self.wa = WindowsAction()
+        self.datas = [
+            {"instituicao": "Hospital São Luiz São Caetano do Sul", "modelo": "EN - Relatório Eficiencia Energética - CAG"},
+            {"instituicao": "Hospital São Luiz Itaim", "modelo": "EN - Relatório Eficiencia Energética - CAG"},
+            {"instituicao": "Hospital Unimed", "modelo": "EN - Relatório Eficiencia Energética - CAG"},
+            {"instituicao": "Honda", "modelo": "EN - Relatório Eficiencia Energética - CAG"},
+            {"instituicao": "Hospital São Luiz Morumbi", "modelo": "EN - Relatorio Eficiencia Energetica"},
+            {"instituicao": "Hospital Copa Star", "modelo": "EN - Relatório Eficiencia Energética - CAG"},
+            {"instituicao": "Hospital e Maternidade Brasil", "modelo": "EN - Relatório Eficiencia Energética - CAG"}]
+
+    # Set contratoManutencao window
+    def contratoManutencao_Tela1(self):
         action = ActionChains(self.driver)
-        self.InstallRevolverTabExtension()
-        time.sleep(2)
         self.driver.get('https://g5.oxyn.com.br/')
-        time.sleep(2)
         login = self.driver.find_element_by_id("user_email")
-        time.sleep(2)
         login.click()
-        login.clear()   
-        login.send_keys('')#Write your e-mail between ' ', like: 'example@example.com'
-        password = self.driver.find_element_by_id("user_senha")
-        time.sleep(2)
+        login.clear()
+        login.send_keys('')  # Write your e-mail between ' ', like: 'example@example.com'
+        password = self.driver.find_element_by_id('')
         password.click()
-        password.clear()       
-        password.send_keys('')#Write your password between ' ', like: 'PasswordExample123'
-        time.sleep(2)
+        password.clear()
+        password.send_keys('Mic@2020')  # Write your password between ' ', like: 'PasswordExample123'
         submitButton = self.driver.find_element_by_xpath("//button[@type='submit']")
         submitButton.click()
         time.sleep(7)
         pyautogui.press('esc')
         time.sleep(2)
-        #Wait until detect element
+        # Wait until detect element
         resumo = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[@id='nav']//li[2]")))
         resumo.click()
         time.sleep(3)
-        marcador = self.driver.find_element_by_class_name("marker-label") 
-        marcador.click() 
+        marcador = self.driver.find_element_by_class_name("marker-label")
+        marcador.click()
         time.sleep(2)
         action.reset_actions()
         contratoBox = self.driver.find_element_by_xpath("//ul[@id='labels']//li[contains(text(),'Contrato de Manutenção')]")
@@ -67,12 +59,12 @@ class Telas_Monitoracao():
         time.sleep(2)
         self.apply()
 
-    def contratoManutencao_Tela2 (self):
-        for i in range (2):
-            self.callTab(i+1)
+    def contratoManutencao_Tela2(self):
+        for i in range(2):
+            self.callTab(i + 1)
             action = ActionChains(self.driver)
-            marcador = self.driver.find_element_by_class_name("marker-label") 
-            marcador.click() 
+            marcador = self.driver.find_element_by_class_name("marker-label")
+            marcador.click()
             time.sleep(2)
             action.reset_actions()
             contratoBox = self.driver.find_element_by_xpath("//ul[@id='labels']//li[contains(text(),'Contrato de Manutenção')]")
@@ -92,27 +84,27 @@ class Telas_Monitoracao():
             time.sleep(2)
             self.apply()
 
-    def apply (self):
+    def apply(self):
         applyButton = self.driver.find_element_by_xpath("//div[@class='ui-dialog-buttonset']//button[contains(text(),'Aplicar')]")
         applyButton.click()
         time.sleep(3)
 
-    def generatorButton (self):
+    def generatorButton(self):
         generator = self.driver.find_element_by_xpath("//div[@class='ui-dialog-buttonset']//button[contains(text(),'Gerar')]")
         generator.click()
         time.sleep(2)
 
-    def dateCalculator (self):
+    def dateCalculator(self):
         currentDate = datetime.datetime.today()
         lastMonthDate = currentDate - timedelta(days=31)
-        #Initial date
+        # Initial date
         initialDateField = self.driver.find_element_by_id('initial-date')
         initialDateField.click()
         initialDateField.clear()
         time.sleep(1)
-        initialDateField.send_keys(lastMonthDate.strftime("%d/%m/%Y")) #Add last month date
+        initialDateField.send_keys(lastMonthDate.strftime("%d/%m/%Y"))  # Add last month date
         pyautogui.press('enter')
-        #Final date
+        # Final date
         finalDateField = self.driver.find_element_by_id('final-date')
         finalDateField.click()
         finalDateField.clear()
@@ -121,9 +113,9 @@ class Telas_Monitoracao():
         pyautogui.press('enter')
         time.sleep(2)
 
-    def openReport (self):
+    def openReport(self):
         self.callTab(3)
-        for i in range (5):
+        for i in range(7):
             fields = self.datas[i]
             select = self.driver.find_element_by_xpath("//span[@id='select2-sites-container']")
             select.click()
@@ -132,111 +124,96 @@ class Telas_Monitoracao():
             insertName.send_keys(fields["instituicao"])
             time.sleep(1)
             pyautogui.press('enter')
-            time.sleep(5)
-            report = self.driver.find_element_by_class_name('report')
+            WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//table[@id='desvios']//tbody//tr[2]//td[2]//a[contains(text(), '{}')]".format(fields["instituicao"]))))
+            report = WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.CLASS_NAME, 'report')))
             report.click()
-            time.sleep(5)
+            time.sleep(7)
             reportModel = self.driver.find_element_by_id('select2-report-model-select2-container')
             reportModel.click()
             findModel = WebDriverWait(self.driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, 'select2-search__field')))
-            time.sleep(5)
             findModel.send_keys(fields["modelo"])
             pyautogui.press('enter')
             time.sleep(1)
             self.dateCalculator()
             self.generatorButton()
             self.pageDown()
-            if i == 4:
-                pyautogui.hotkey('Ctrl','w') #close report tab
+            if i == 6:
+                pyautogui.hotkey('Ctrl', 'w')  # close report tab
         time.sleep(2)
 
-
-    def callTab (self, i):
+    def callTab(self, i):
         self.driver.execute_script("window.open('');")
         self.driver.switch_to.window(self.driver.window_handles[i])
         self.driver.get("https://g5.oxyn.com.br/deviation")
         time.sleep(3)
 
-    def pageDown (self):
+    def pageDown(self):
         self.driver.switch_to.window(self.driver.window_handles[3])
         time.sleep(2)
         pyautogui.press('esc')
         time.sleep(1)
 
-    def centerPositionScreen (self):
+    def centerPositionScreen(self):
         self.driver.maximize_window()
         time.sleep(2)
-        pyautogui.moveTo(x=-960, y=15) #Set cursor in first screen
-        pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
+        pyautogui.moveTo(x=-960, y=15)  # Set cursor in first screen
+        pyautogui.dragTo(x=960, y=10, duration=0.75)  # Drag window to second
         time.sleep(2)
-        pyautogui.moveTo(x=2880, y=15) #Set cursor in third screen
-        pyautogui.dragTo(x=960, y=10, duration=0.75) #Drag window to second
+        pyautogui.moveTo(x=2880, y=15)  # Set cursor in third screen
+        pyautogui.dragTo(x=960, y=10, duration=0.75)  # Drag window to second
         pyautogui.click(x=960, y=10)
         time.sleep(2)
 
-    def GoogleAccess (self):
-        self.driver.get('https://chrome.google.com/webstore/detail/revolver-tabs/dlknooajieciikpedpldejhhijacnbda?hl=pt-BR')
-    
-    def AddExtension (self):
-        #resumo = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[@id='nav']//li[2]")))
-        addButton = WebDriverWait(self.driver,20).until(EC.presence_of_element_located((By.XPATH,"//div[@class='g-c-x']//div[contains(text(),'Usar no Chrome')]")))
-        addButton.click()
-    
-    def InstallRevolverTabExtension (self):
-        self.GoogleAccess()
-        time.sleep(3)
-        self.AddExtension()
-        time.sleep(5)
-        pyautogui.press('left')
-        pyautogui.press('enter')
-        time.sleep(5)
-
-class WindowsAction ():
+class WindowsAction():
     def __init__(self):
         pass
 
-    def sendToFirstScreen (self):
+    def sendToFirstScreen(self):
         pyautogui.moveTo(x=53, y=15)
-        #Change coordinates to send to first screen
-        pyautogui.dragTo(x=-960, y=15, button='left', duration=0.75) 
+        # Change coordinates to send to first screen
+        pyautogui.dragTo(x=-960, y=15, button='left', duration=0.75)
         time.sleep(2)
 
-    def sendAllToThird (self):
-        pyautogui.click(x=1754, y=15) #Set cursor first report tab
+    def sendAllToThird(self):
+        pyautogui.click(x=1754, y=15)  # Set cursor first report tab
         pyautogui.keyDown('win')
-        for i in range (4):
+        for i in range(4):
             pyautogui.press('right')
             time.sleep(1)
         pyautogui.press('up')
         pyautogui.keyUp('win')
         time.sleep(2)
-   
+
     def secondScreen(self):
-        for i in range (2):
-            pyautogui.moveTo(x=1985, y=15) #Set cursor first report tab on thrid window
-            pyautogui.dragTo(x=767, y=15, duration=0.75) #drag to center of second window
+        for i in range(2):
+            pyautogui.moveTo(x=1985, y=15)  # Set cursor first report tab on thrid window
+            pyautogui.dragTo(x=767, y=15, duration=0.75)  # drag to center of second window
             time.sleep(2)
 
-    def maximizePDF (self):
-        pyautogui.moveTo(x=1853, y=870, duration=2.0)
+    def maximizePDF(self):
+        pyautogui.moveTo(x=3390, y=655, duration=2.0)
         time.sleep(1)
         pyautogui.click()
         time.sleep(1.5)
 
-    def reportPosition (self):
-        tab = ['8', '7', '6', '5', '4']
+    def reportPosition(self):
+        self.sendToFirstScreen()
+        self.sendAllToThird()
+        self.secondScreen()
+        pyautogui.click(x=2880,y=540)
+        tab = ['7', '6', '5', '4', '3', '2', '1']
         clear = lambda: os.system("cls")
         wait = 0
         clear()
-        while wait < 30:
+        while wait < 10:
             clear()
-            print("Wait 30 seconds")
+            print("Wait 10 seconds")
             wait = wait + 1
             time.sleep(0.8)
         print("Ready...")
 
-        for i in range (5):
-            pyautogui.moveTo(x=960, y=540) #center of a 1920x1080 screen
+        for i in range(7):
+            pyautogui.moveTo(x=2880, y=540)  # center of a 1920x1080 third screen
             pyautogui.hotkey('ctrl', tab[i])
             time.sleep(2)
             pyautogui.hotkey('ctrl', 'f')
@@ -257,8 +234,5 @@ tm.contratoManutencao_Tela1()
 tm.contratoManutencao_Tela2()
 tm.openReport()
 wa.reportPosition()
-wa.sendToFirstScreen()
-wa.sendAllToThird()
-wa.secondScreen()
-pyautogui.click(x=1822, y=53)
-pyautogui.click(x=3354, y=53)
+pyautogui.click(x=1802, y=53)
+pyautogui.click(x=3346, y=58)
