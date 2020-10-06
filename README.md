@@ -10,7 +10,7 @@
 
 ## Summary :pushpin:
 - Frameworks
-- Requiriments
+- Requirements
 - Installation Guide
 - Links
 - Run Application
@@ -30,7 +30,7 @@
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Observation: Don't worry about installation, because it's going to be presented in the following topics.
 
-## Requiriments :memo:
+## Requirements :memo:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To run the program is important to have these programs and frameworks installed in your machine.
 #### Program
 - Python 3.8.3
@@ -47,47 +47,15 @@
 </br>
 
 - Frameworks:</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following topics will present the basic form about how to install some libraries that are included in it's program in your Windows OS.</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For download all libraries, you just have to follow these steps:</br>
 
-    - Datetime:</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- Download Python and apply it in your path
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- Press ```win``` + ```r```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- Search for ```cmd```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4- Acess your folder with these files, using ```cd <folder name>```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- Type this code ```pip install -r requirements.txt```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6- Press ```enter```
 
-    ```
-    python -m pip install datetime
-    ```
-    
-    - Pyautogui:</br>
-    
-    ##### Windows
-    
-    ```
-    python -m pip install pyautogui
-    ```
-    
-    On macOS and Linux, you need to run ```python3```:
-    ##### macOS and Linux
-    
-    ```
-    python3 -m pip install pyautogui
-    ```
-    
-    On Linux, additionally you need to install the ```scrot``` application, as well as Tkinter:
-    ##### Linux
-    
-    ```
-    sudo apt-get install scrot
-
-    sudo apt-get install python3-tk
-
-    sudo apt-get intall python3-dev
-    ```
-    
-    - Selenium:</br>
-    
-    ##### Command for Windows users:
-    
-    ```
-    python -m pip install selenium
-    ```
 
 ## Links :link:
 #### Program
