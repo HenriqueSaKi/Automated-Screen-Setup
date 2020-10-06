@@ -49,11 +49,11 @@
 - Frameworks:</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For download all libraries, you just have to follow these steps:</br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- Download Python and apply it in your path
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- Press ```win``` + ```r```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- Search for ```cmd```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4- Acess your folder with these files, using ```cd <folder name>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- Type this code ```pip install -r requirements.txt```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- Download Python and apply it in your path</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- Press ```win``` + ```r```</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- Search for ```cmd```</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4- Acess your folder with these files, using ```cd <folder name>```</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- Type this code ```pip install -r requirements.txt```</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6- Press ```enter```
 
 
