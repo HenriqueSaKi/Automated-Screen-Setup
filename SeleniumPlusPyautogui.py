@@ -39,7 +39,7 @@ class Telas_Monitoracao():
         password = self.driver.find_element_by_id('')
         password.click()
         password.clear()
-        password.send_keys('Mic@2020')  # Write your password between ' ', like: 'PasswordExample123'
+        password.send_keys('')  # Write your password between ' ', like: 'PasswordExample123'
         submitButton = self.driver.find_element_by_xpath("//button[@type='submit']")
         submitButton.click()
         time.sleep(7)
